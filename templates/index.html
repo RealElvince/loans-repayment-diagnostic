@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Loan Diagnosis Form{% endblock %}
+
+{% block content %}
+
+  {% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+  {% endif %}
+
+  <form method="POST">
+    <div class="mb-3">
+      <label class="form-label">Constituency</label>
+      <input type="text" name="constituency" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Quarter (Q1/Q2/Q3/Q4)</label>
+      <input type="text" name="quarter" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Opening Balance</label>
+      <input type="number" step="0.01" name="opening_balance" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Closing Balance</label>
+      <input type="number" step="0.01" name="closing_balance" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Transfer to Main Account</label>
+      <input type="number" step="0.01" name="transfer_to_main" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Transfer Date (YYYY-MM-DD)</label>
+      <input type="text" name="transfer_date" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-success">Diagnose</button>
+  </form>
+{% endblock %}

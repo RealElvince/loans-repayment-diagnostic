@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Diagnosis Result{% endblock %}
+
+{% block content %}
+  <h2>Diagnosis Result</h2>
+  <div class="alert alert-info">
+    <p><strong>Constituency:</strong> {{ result.Constituency }}</p>
+    <p><strong>Quarter:</strong> {{ result.Quarter }}</p>
+    <p><strong>Opening Balance:</strong> {{ "{:,.2f}".format(result.Opening_Balance) }}</p>
+    <p><strong>Closing Balance:</strong> {{ "{:,.2f}".format(result.Closing_Balance) }}</p>
+    <p><strong>Transfer to Main Account:</strong> {{ "{:,.2f}".format(result.Transfer_to_Main) }}</p>
+    <p><strong>Adjusted Difference:</strong> {{ "{:,.2f}".format(result.Adjusted_Difference) }}</p>
+    <p><strong>Status:</strong> {{ result.Status }}</p>
+  </div>
+
+  <a href="/" class="btn btn-primary">Diagnose Again</a>
+  <a href="/download/csv" class="btn btn-success">Download CSV</a>
+  <a href="/download/excel" class="btn btn-success">Download Excel</a>
+{% endblock %}
