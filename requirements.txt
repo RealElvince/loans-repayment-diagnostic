@@ -2,3 +2,4 @@ flask
 pandas  
 fpdf 
 xlsxwriter
+gunicorn
