@@ -1,0 +1,20 @@
+services:
+  loans_diagnostics:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    ports:
+     - "5000:5000"
+    
+    volumes:
+     - ./results:/app/results
+     - ./templates:/app/templates
+    
+    networks:
+      - loans_network
+
+
+networks:
+  loans_network:
+    driver: bridge
